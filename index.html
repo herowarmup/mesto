@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pages/index.css" />
+    <title>Mesto</title>
+  </head>
+  <body class="root">
+    <header class="header">
+      <img src="./images/logo.svg" alt="Mesto Логотип" class="header__logo" />
+    </header>
+
+    <main class="content">
+      <section class="profile">
+        <img src="images/avatar.jpg" alt="Аватар профиля" class="profile__avatar" />
+        <div class="profile__info">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button class="profile__edit-button"></button>
+          <p class="profile__about">Исследователь океана</p>
+        </div>
+        <button class="profile__add-button" type="button"></button>
+      </section>
+      <section class="cards">
+        <ul class="cards__items">
+          <li class="card">
+            <img src="./images/Altay.jpg" alt="Река Алтая" class="card__image" />
+            <div class="card__description">
+              <h2 class="card__title">Река Алтая</h2>
+              <button class="card__like" type="button">нравится</button>
+            </div>
+          </li>
+          <li class="card">
+            <img src="./images/Chukotka.jpg" alt="Берег Чукотки" class="card__image" />
+            <div class="card__description">
+              <h2 class="card__title">Берег Чукотки</h2>
+              <button class="card__like" type="button">нравится</button>
+            </div>
+          </li>
+          <li class="card">
+            <img src="./images/Kamchatka.jpg" alt="Горы Камчатки" class="card__image" />
+            <div class="card__description">
+              <h2 class="card__title">Горы Камчатки</h2>
+              <button class="card__like" type="button">нравится</button>
+            </div>
+          </li>
+          <li class="card">
+            <img src="./images/Sevastopol.jpg" alt="Порт Севастополя" class="card__image" />
+            <div class="card__description">
+              <h2 class="card__title">Севастополь</h2>
+              <button class="card__like" type="button">нравится</button>
+            </div>
+          </li>
+          <li class="card">
+            <img src="./images/Sochi.jpg" alt="Горы Сочи" class="card__image" />
+            <div class="card__description">
+              <h2 class="card__title">Красная Поляна</h2>
+              <button class="card__like" type="button">нравится</button>
+            </div>
+          </li>
+          <li class="card">
+            <img
+              src="./images/Yakutia.jpg"
+              alt="Достопремичательность Якутии"
+              class="card__image"
+            />
+            <div class="card__description">
+              <h2 class="card__title">Якутия</h2>
+              <button class="card__like" type="button">нравится</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copy">&copy; 2022. Herowarmup</p>
+    </footer>
+
+    <div class="popup">
+      <div class="popup__wrap">
+        <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__form" name="form" method="post" action="#">
+          <input class="popup__input popup__input-name" type="text" placeholder="Имя" />
+          <input class="popup__input popup__input-about" type="text" placeholder="О вас" />
+          <button class="popup__submit-btn" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
