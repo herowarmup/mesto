@@ -6,18 +6,17 @@
   line-height: 17px;
   padding-bottom: 13px;
   border-style: inset;
-  margin-bottom: 30px;
+  margin-bottom: 48px;
   border: none;
   color: #000;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .popup__input:hover {
   opacity: 0.5;
 }
-
 @media screen and (max-width: 750px) {
-  .popup__input-about {
-    margin-bottom: 45px;
+  .popup__input {
+    margin-bottom: 30px;
   }
 }

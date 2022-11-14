@@ -17,10 +17,10 @@
         <img src="images/avatar.jpg" alt="Аватар профиля" class="profile__avatar" />
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button"></button>
+          <button class="profile__edit-button" type="button" aria-label="Редактировать"></button>
           <p class="profile__about">Исследователь океана</p>
         </div>
-        <button class="profile__add-button" type="button"></button>
+        <button class="profile__add-button" type="button" aria-label="Добавить"></button>
       </section>
       <section class="cards">
         <ul class="cards__items">
@@ -60,11 +60,7 @@
             </div>
           </li>
           <li class="card">
-            <img
-              src="./images/Yakutia.jpg"
-              alt="Достопремичательность Якутии"
-              class="card__image"
-            />
+            <img src="./images/Yakutia.jpg" alt="Достопремичательность Якутии" class="card__image" />
             <div class="card__description">
               <h2 class="card__title">Якутия</h2>
               <button class="card__like" type="button">нравится</button>
@@ -83,8 +79,8 @@
         <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" name="form" method="post" action="#">
-          <input class="popup__input popup__input-name" type="text" placeholder="Имя" />
-          <input class="popup__input popup__input-about" type="text" placeholder="О вас" />
+          <input class="popup__input" id="popup-name" name="text" placeholder="Имя" />
+          <input class="popup__input" id="popup-about" name="text" placeholder="О вас" />
           <button class="popup__submit-btn" type="submit">Сохранить</button>
         </form>
       </div>
