@@ -16,56 +16,15 @@
       <section class="profile">
         <img src="images/avatar.jpg" alt="Аватар профиля" class="profile__avatar" />
         <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <h1 class="profile__name">Артём Морозов</h1>
           <button class="profile__edit-button" type="button" aria-label="Редактировать"></button>
-          <p class="profile__about">Исследователь океана</p>
+          <p class="profile__about">UX/UI Designer</p>
         </div>
         <button class="profile__add-button" type="button" aria-label="Добавить"></button>
       </section>
       <section class="cards">
         <ul class="cards__items">
-          <li class="card">
-            <img src="./images/Altay.jpg" alt="Река Алтая" class="card__image" />
-            <div class="card__description">
-              <h2 class="card__title">Река Алтая</h2>
-              <button class="card__like" type="button">нравится</button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/Chukotka.jpg" alt="Берег Чукотки" class="card__image" />
-            <div class="card__description">
-              <h2 class="card__title">Берег Чукотки</h2>
-              <button class="card__like" type="button">нравится</button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/Kamchatka.jpg" alt="Горы Камчатки" class="card__image" />
-            <div class="card__description">
-              <h2 class="card__title">Горы Камчатки</h2>
-              <button class="card__like" type="button">нравится</button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/Sevastopol.jpg" alt="Порт Севастополя" class="card__image" />
-            <div class="card__description">
-              <h2 class="card__title">Севастополь</h2>
-              <button class="card__like" type="button">нравится</button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/Sochi.jpg" alt="Горы Сочи" class="card__image" />
-            <div class="card__description">
-              <h2 class="card__title">Красная Поляна</h2>
-              <button class="card__like" type="button">нравится</button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/Yakutia.jpg" alt="Достопремичательность Якутии" class="card__image" />
-            <div class="card__description">
-              <h2 class="card__title">Якутия</h2>
-              <button class="card__like" type="button">нравится</button>
-            </div>
-          </li>
+          <!-- JS Array-->
         </ul>
       </section>
     </main>
@@ -74,18 +33,49 @@
       <p class="footer__copy">&copy; 2022. Herowarmup</p>
     </footer>
 
-    <div class="popup">
+    <div class="popup popup_profile">
       <div class="popup__wrap">
-        <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+        <button class="popup__close-btn popup__close-profile" type="button" aria-label="Закрыть"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form" name="form" method="post" action="#">
-          <input class="popup__input" id="popup-name" name="text" placeholder="Имя" />
-          <input class="popup__input" id="popup-about" name="text" placeholder="О вас" />
+        <form class="popup__form popup__form-profile" name="form" method="post" action="#">
+          <input class="popup__input" id="popup-name_profile" name="text" placeholder="Имя" />
+          <input class="popup__input" id="popup-about_profile" name="text" placeholder="О вас" />
           <button class="popup__submit-btn" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
 
-    <script src="./scripts/script.js"></script>
+    <div class="popup popup_place">
+      <div class="popup__wrap">
+        <button class="popup__close-btn popup__close-place" type="button" aria-label="Закрыть"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form popup__form-place" name="form" method="post" action="#">
+          <input class="popup__input" id="popup-name_place" name="text" placeholder="Название" />
+          <input class="popup__input" id="popup-about_place" name="text" placeholder="Ссылка на картинку" />
+          <button class="popup__submit-btn" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup__img">
+      <div class="popup__image-wrap">
+        <button class="popup__close-btn popup__close-image" type="button" aria-label="Закрыть"></button>
+        <img class="popup__image" src="#" alt="" />
+        <p class="popup__text"></p>
+      </div>
+    </div>
+
+    <script src="./scripts/script.js" type="module" defer></script>
+
+    <template class="cards__template">
+      <li class="card">
+        <button class="card__delete" type="button"></button>
+        <img src="" alt="" class="card__image" />
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button class="card__like" type="button">нравится</button>
+        </div>
+      </li>
+    </template>
   </body>
 </html>
