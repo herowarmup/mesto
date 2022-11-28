@@ -10,7 +10,7 @@ const cardsItemsElement = document.querySelector(".cards__items");
 const cardsTemplate = document.querySelector(".cards__template").content.querySelector(".card").cloneNode(true);
 
 // Объявление попапа карточек
-const popupImage = document.querySelector(".popup__img");
+const popupImage = document.querySelector(".popup_img");
 const popupCloseImage = document.querySelector(".popup__close-image");
 
 // Обозначение попапа
