@@ -69,7 +69,6 @@ function createCard(placeVal, linkVal) {
   cardLikeButton.addEventListener("click", handleLikeButtonClick);
 
   const popupViewImage = popupImage.querySelector(".popup__image");
-  console.log(popupViewImage);
 
   cardImage.addEventListener("click", function () {
     popupViewImage.src = linkVal;
@@ -122,7 +121,7 @@ popupCloseImage.addEventListener("click", function () {
 // Обработка сабмита добавления карточки
 popupFormPlace.addEventListener("submit", function (evt) {
   evt.preventDefault();
-  prependCard(addInputPlace.value, addInputLink.value);
+  renderCard(addInputPlace.value, addInputLink.value);
   addInputPlace.value = "";
   addInputLink.value = "";
   closedPopup(popupPlace);
