@@ -38,8 +38,10 @@
         <button class="popup__close-btn popup__close-profile" type="button" aria-label="Закрыть"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form popup__form-profile" name="form" method="post" action="#">
-          <input class="popup__input" id="popup-name_profile" name="text" placeholder="Имя" />
-          <input class="popup__input" id="popup-about_profile" name="text" placeholder="О вас" />
+          <input class="popup__input" id="popup-name_profile" type="text" placeholder="Имя" minlength="2" maxlength="40" required />
+          <span id="popup-name_profile-error" class="error"></span>
+          <input class="popup__input" id="popup-about_profile" type="text" placeholder="О вас" minlength="2" maxlength="200" required />
+          <span id="popup-about_profile-error" class="error"></span>
           <button class="popup__submit-btn" type="submit">Сохранить</button>
         </form>
       </div>
@@ -50,9 +52,11 @@
         <button class="popup__close-btn popup__close-place" type="button" aria-label="Закрыть"></button>
         <h2 class="popup__title">Новое место</h2>
         <form class="popup__form popup__form-place" name="form" method="post" action="#">
-          <input class="popup__input" id="popup-name_place" name="text" placeholder="Название" />
-          <input class="popup__input" id="popup-about_place" name="text" placeholder="Ссылка на картинку" />
-          <button class="popup__submit-btn" type="submit">Создать</button>
+          <input class="popup__input" id="popup-name_place" type="text" placeholder="Название" minlength="2" maxlength="30" required />
+          <span id="popup-name_place-error" class="error"></span>
+          <input class="popup__input" id="popup-about_place" type="url" placeholder="Ссылка на картинку" required />
+          <span id="popup-about_place-error" class="error"></span>
+          <button class="popup__submit-btn popup__submit-btn_invalid" type="submit">Создать</button>
         </form>
       </div>
     </div>
@@ -66,6 +70,7 @@
     </div>
 
     <script src="./scripts/script.js" type="module" defer></script>
+    <script src="./scripts/validate.js" type="module" defer></script>
 
     <template class="cards__template">
       <li class="card">
