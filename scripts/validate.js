@@ -12,13 +12,14 @@ const checkInputValidity = (input, config) => {
 
 const toggleButton = (inputs, submitBtn, config) => {
   const isFormValid = inputs.every((input) => input.validity.valid);
+  const { inactiveButtonClass } = config;
 
   if (isFormValid) {
-    submitBtn.classList.remove(config.inactiveButtonClass);
-    submitBtn.disabled = "";
+    submitBtn.classList.remove(inactiveButtonClass);
+    submitBtn.disabled = false;
   } else {
-    submitBtn.classList.add(config.inactiveButtonClass);
-    submitBtn.disabled = "disabled";
+    submitBtn.classList.add(inactiveButtonClass);
+    submitBtn.disabled = true;
   }
 };
 
@@ -29,10 +30,6 @@ const enableValidation = (config) => {
   forms.forEach((form) => {
     const inputs = [...form.querySelectorAll(inputSelector)];
     const submitBtn = form.querySelector(submitButtonSelector);
-
-    form.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-    });
 
     inputs.forEach((input) => {
       input.addEventListener("input", () => {
