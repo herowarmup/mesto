@@ -14,14 +14,16 @@ import {
   config,
   popupPlace,
   popupEditPlace,
-  popupCreateImgBtn,
   popupFormPlace,
   addInputPlace,
   addInputLink,
+  popupImage,
+  popupImageText,
+  popupViewImage,
 } from './constants.js';
 
 function createCard(item) {
-  const card = new Card(item, '.cards__template');
+  const card = new Card(item, '.cards__template', handleCardClick);
   const cardsTemplate = card.generateCard();
 
   return cardsTemplate;
@@ -36,10 +38,17 @@ closeButtons.forEach((button) => {
   button.addEventListener('click', () => closePopup(popup));
 });
 
-export function openPopup(popupItem) {
+function openPopup(popupItem) {
   popupItem.classList.add('popup_opened');
   document.addEventListener('click', closeByOverlay);
   document.addEventListener('keydown', closeByEsc);
+}
+
+function handleCardClick(name, link) {
+  popupViewImage.src = link;
+  popupViewImage.alt = name;
+  popupImageText.textContent = name;
+  openPopup(popupImage);
 }
 
 function closePopup(popupItem) {
@@ -66,20 +75,6 @@ editFormValidator.enableValidation();
 const addFormValidator = new FormValidator(config, popupFormPlace);
 addFormValidator.enableValidation();
 
-function resetErrSpan() {
-  const popupErrSpan = Array.from(document.querySelectorAll('error'));
-  popupErrSpan.forEach((item) => {
-    item.textContent = '';
-  });
-}
-
-function resetErrInput() {
-  const popupErrInput = Array.from(document.querySelectorAll('popup__input'));
-  popupErrInput.forEach((item) => {
-    item.classList.remove(config.inputErrorClass);
-  });
-}
-
 function fillInFormInputs() {
   profileInputName.value = profileName.textContent;
   profileInputAbout.value = profileAbout.textContent;
@@ -101,24 +96,19 @@ function submitAddCardForm(evt) {
   cardsItemsElement.prepend(createCard(newCardElement));
 
   closePopup(popupPlace);
-  popupCreateImgBtn.classList.add('popup__btn_disabled');
-  popupCreateImgBtn.disabled = true;
 }
 
 popupEditBtn.addEventListener('click', function () {
   fillInFormInputs();
-  resetErrInput();
-  resetErrSpan();
+
+  editFormValidator.resetValidation();
   openPopup(popupProfile);
 });
 
 popupEditPlace.addEventListener('click', function () {
-  popupCreateImgBtn.setAttribute('disabled', true);
-  popupCreateImgBtn.classList.add('popup__submit-btn_invalid');
   popupFormPlace.reset();
 
-  resetErrInput();
-  resetErrSpan();
+  addFormValidator.resetValidation();
   openPopup(popupPlace);
 });
 

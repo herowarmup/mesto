@@ -40,6 +40,7 @@ export const popupPlace = document.querySelector('.popup_place');
 export const popupEditPlace = document.querySelector('.profile__add-button');
 export const popupCreateImgBtn = document.querySelector('.popup__create-btn');
 export const popupFormPlace = document.querySelector('.popup__form-place');
+export const popupImageText = popupImage.querySelector('.popup__text');
 
 export const addInputPlace = document.querySelector('#popup-name_place');
 export const addInputLink = document.querySelector('#popup-about_place');
