@@ -26,9 +26,7 @@ export const initialCards = [
 ];
 
 export const popupImage = document.querySelector('.popup_img');
-export const popupViewImage = popupImage.querySelector('.popup__image');
 export const cardsItemsElement = document.querySelector('.cards__items');
-export const closeButtons = document.querySelectorAll('.popup__close-btn');
 export const popupEditBtn = document.querySelector('.profile__edit-button');
 export const popupFormProfile = document.querySelector('.popup__form-profile');
 export const popupProfile = document.querySelector('.popup_profile');
@@ -40,8 +38,6 @@ export const popupPlace = document.querySelector('.popup_place');
 export const popupEditPlace = document.querySelector('.profile__add-button');
 export const popupCreateImgBtn = document.querySelector('.popup__create-btn');
 export const popupFormPlace = document.querySelector('.popup__form-place');
-export const popupImageText = popupImage.querySelector('.popup__text');
-
 export const addInputPlace = document.querySelector('#popup-name_place');
 export const addInputLink = document.querySelector('#popup-about_place');
 

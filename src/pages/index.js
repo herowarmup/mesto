@@ -1,9 +1,8 @@
-import { Card } from './Card.js';
-import { FormValidator } from './FormValidator.js';
+import { Card } from '../components/Card.js';
+import { FormValidator } from '../components/FormValidator.js';
 import {
   initialCards,
   cardsItemsElement,
-  closeButtons,
   popupEditBtn,
   popupFormProfile,
   popupProfile,
@@ -18,15 +17,13 @@ import {
   addInputPlace,
   addInputLink,
   popupImage,
-  popupImageText,
-  popupViewImage,
-} from './constants.js';
-import { Section } from './Section.js';
-import PopupWithImage from './PopupWithImage.js';
-import UserInfo from './UserInfo.Js';
-import PopupWithForm from './PopupWithForm.js';
+} from '../utils/constants.js';
+import { Section } from '../components/Section.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import UserInfo from '../components/UserInfo.js';
+import PopupWithForm from '../components/PopupWithForm.js';
 
-import '../pages/index.css';
+import './index.css';
 
 const createCards = new Section(
   {
@@ -77,7 +74,6 @@ popupEditBtn.addEventListener('click', () => {
 
 popupEditPlace.addEventListener('click', function () {
   addFormValidator.resetValidation();
-  popupFormPlace.reset();
   addPopup.open();
 });
 
