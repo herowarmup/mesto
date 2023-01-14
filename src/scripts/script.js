@@ -26,6 +26,8 @@ import PopupWithImage from './PopupWithImage.js';
 import UserInfo from './UserInfo.Js';
 import PopupWithForm from './PopupWithForm.js';
 
+import '../pages/index.css';
+
 const createCards = new Section(
   {
     items: initialCards,
