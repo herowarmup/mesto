@@ -14,35 +14,28 @@ import {
   popupPlace,
   popupEditPlace,
   popupFormPlace,
-  addInputPlace,
-  addInputLink,
   popupImage,
 } from '../utils/constants.js';
-import { Section } from '../components/Section.js';
+import Section from '../components/Section.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import UserInfo from '../components/UserInfo.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 
 import './index.css';
 
+function createCard(item) {
+  const card = new Card(item, '.cards__template', handleCardClick);
+  return card.generateCard();
+}
+
 const createCards = new Section(
   {
     items: initialCards,
-    renderer: (item) => {
-      const cards = createCard(item);
-      createCards.addItem(cards);
-    },
+    renderer: createCard,
   },
   cardsItemsElement
 );
 createCards.renderItems();
-
-function createCard(item) {
-  const card = new Card(item, '.cards__template', handleCardClick);
-  const cardsTemplate = card.generateCard();
-
-  return cardsTemplate;
-}
 
 function handleCardClick(name, link) {
   imgPopup.open(name, link);
@@ -57,12 +50,12 @@ function submitEditProfileForm(obj) {
   profileInfo.setUserInfo(obj);
 }
 
-function submitAddCardForm() {
+function submitAddCardForm(inputValues) {
   const newCardElement = {
-    link: addInputLink.value,
-    name: addInputPlace.value,
+    link: inputValues['popup-about_place'],
+    name: inputValues['popup-name_place'],
   };
-  cardsItemsElement.prepend(createCard(newCardElement));
+  createCards.prependItem(newCardElement);
   addPopup.close();
 }
 
@@ -76,6 +69,9 @@ popupEditPlace.addEventListener('click', function () {
   addFormValidator.resetValidation();
   addPopup.open();
 });
+
+// С валидацией которую вы посоветовали еще не разобрался
+// Буду пробовать, спасибо большое за совет! :))
 
 const editFormValidator = new FormValidator(config, popupFormProfile);
 editFormValidator.enableValidation();
