@@ -28,22 +28,23 @@ function createCard(item) {
   return card.generateCard();
 }
 
-const createCards = new Section(
+const cardSection = new Section(
   {
     items: initialCards,
     renderer: createCard,
   },
   cardsItemsElement
 );
-createCards.renderItems();
+cardSection.renderItems();
 
 function handleCardClick(name, link) {
   imgPopup.open(name, link);
 }
 
 function fillInFormInputs() {
-  profileInputName.value = profileName.textContent;
-  profileInputAbout.value = profileAbout.textContent;
+  const { profileAbout, profileName } = profileInfo.getUserInfo();
+  profileInputName.value = profileName;
+  profileInputAbout.value = profileAbout;
 }
 
 function submitEditProfileForm(obj) {
@@ -55,7 +56,7 @@ function submitAddCardForm(inputValues) {
     link: inputValues['popup-about_place'],
     name: inputValues['popup-name_place'],
   };
-  createCards.prependItem(newCardElement);
+  cardSection.prependItem(newCardElement);
   addPopup.close();
 }
 
@@ -85,6 +86,6 @@ const addPopup = new PopupWithForm(popupPlace, submitAddCardForm);
 addPopup.setEventListeners();
 
 const profileInfo = new UserInfo({
-  profileName: profileName,
-  profileAbout: profileAbout,
+  profileName,
+  profileAbout,
 });
