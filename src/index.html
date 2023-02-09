@@ -7,15 +7,19 @@
     <title>Mesto</title>
   </head>
   <body class="root">
-    <header class="header"><img src="<%=require('./images/logo.svg')%>" alt="Mesto Логотип" class="header__logo" /></header>
+    <header class="header">
+      <img src="<%=require('./images/logo.svg')%>" alt="Mesto Логотип" class="header__logo" />
+    </header>
 
     <main class="content">
       <section class="profile">
-        <img src="<%=require('./images/avatar.jpg')%>" alt="Аватар профиля" class="profile__avatar" />
+        <div class="profile__avatar-container">
+          <img src="#" alt="Аватар профиля" class="profile__avatar" />
+        </div>
         <div class="profile__info">
-          <h1 class="profile__name">Артём Морозов</h1>
+          <h1 class="profile__name"></h1>
           <button class="profile__edit-button" type="button" aria-label="Редактировать"></button>
-          <p class="profile__about">UX/UI Designer</p>
+          <p class="profile__about"></p>
         </div>
         <button class="profile__add-button" type="button" aria-label="Добавить"></button>
       </section>
@@ -34,7 +38,13 @@
       <div class="popup__wrap">
         <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form popup__form-profile" name="form" method="post" action="#" novalidate>
+        <form
+          class="popup__form popup__form-profile"
+          name="form"
+          method="post"
+          action="#"
+          novalidate
+        >
           <input
             class="popup__input"
             id="popup-name_profile"
@@ -62,6 +72,40 @@
       </div>
     </div>
 
+    <div class="popup popup_avatar">
+      <div class="popup__wrap">
+        <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+        <h2 class="popup__title">Обновить аватар</h2>
+        <form class="popup__form popup__form-avatar" name="form" novalidate>
+          <input
+            class="popup__input"
+            id="popup-name_avatar"
+            type="url"
+            placeholder="Ссылка на аватар"
+            required
+          />
+          <span id="popup-name_avatar-error" class="error"></span>
+          <button
+            class="popup__submit-btn popup__create-btn popup__submit-btn_invalid"
+            type="submit"
+            disabled="true"
+          >
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_delete">
+      <div class="popup__wrap">
+        <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+        <h2 class="popup__title">Вы уверены?</h2>
+        <form class="popup__form popup__form-delete" name="form" novalidate>
+          <button class="popup__submit-btn popup__delete-btn" type="submit">Да</button>
+        </form>
+      </div>
+    </div>
+
     <div class="popup popup_place">
       <div class="popup__wrap">
         <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
@@ -78,9 +122,22 @@
             required
           />
           <span id="popup-name_place-error" class="error"></span>
-          <input class="popup__input" id="popup-about_place" type="url" placeholder="Ссылка на картинку" autocomplete="off" required />
+          <input
+            class="popup__input"
+            id="popup-about_place"
+            type="url"
+            placeholder="Ссылка на картинку"
+            autocomplete="off"
+            required
+          />
           <span id="popup-about_place-error" class="error"></span>
-          <button class="popup__submit-btn popup__create-btn popup__submit-btn_invalid" type="submit" disabled="true">Создать</button>
+          <button
+            class="popup__submit-btn popup__create-btn popup__submit-btn_invalid"
+            type="submit"
+            disabled="true"
+          >
+            Создать
+          </button>
         </form>
       </div>
     </div>
@@ -99,7 +156,10 @@
         <img src="#" alt="" class="card__image" />
         <div class="card__description">
           <h2 class="card__title">123</h2>
-          <button class="card__like" type="button">нравится</button>
+          <div class="card__like-container">
+            <button class="card__like" type="button">нравится</button>
+            <span class="card__like-counter">1</span>
+          </div>
         </div>
       </li>
     </template>

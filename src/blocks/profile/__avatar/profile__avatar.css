@@ -5,6 +5,7 @@
   object-fit: cover;
   margin-top: 40px;
   margin-bottom: 50px;
+  transition: opacity 0.3s linear;
 }
 
 @media screen and (max-width: 750px) {
@@ -12,4 +13,9 @@
     margin-bottom: 25px;
     margin-top: 38px;
   }
+}
+
+.profile__avatar:hover {
+  cursor: pointer;
+  opacity: 0.2;
 }
