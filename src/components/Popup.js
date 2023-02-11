@@ -20,14 +20,6 @@ export default class Popup {
     }
   }
 
-  loading(text, isLoading) {
-    if (isLoading) {
-      this._submitBtn.textContent = text;
-    } else {
-      this._submitBtn.textContent = this._submitBtnText;
-    }
-  }
-
   setEventListeners() {
     this._popup.addEventListener('click', (evt) => {
       if (

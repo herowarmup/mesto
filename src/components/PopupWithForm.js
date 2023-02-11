@@ -18,13 +18,21 @@ export default class PopupWithForm extends Popup {
     return this._formValues;
   }
 
+  loading(text, isLoading) {
+    if (isLoading) {
+      this._submitBtn.textContent = text;
+    } else {
+      this._submitBtn.textContent = this._submitBtnText;
+    }
+  }
+
   setEventListeners() {
     super.setEventListeners();
     this._popup.addEventListener('submit', (evt) => {
       evt.preventDefault();
       const inputValues = this._getInputValues();
       this._submitCallback(inputValues);
-      super.close();
+      // super.close();
     });
   }
 

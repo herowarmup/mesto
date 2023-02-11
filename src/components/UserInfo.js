@@ -19,4 +19,8 @@ export default class UserInfo {
     this._profileAbout.textContent = obj.about;
     this._profileAvatar.src = obj.avatar;
   }
+
+  setAvatar(obj) {
+    this._profileAvatar.src = obj['popup-name_avatar'];
+  }
 }
