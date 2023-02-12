@@ -1,6 +1,7 @@
-import Popup from './Popup.js';
+// import Popup from './Popup.js';
+import PopupWithForm from './PopupWithForm.js';
 
-export default class PopupWithConfirmation extends Popup {
+export default class PopupWithConfirmation extends PopupWithForm {
   constructor(popup, submitCallback) {
     super(popup);
     this._submitCallback = submitCallback;
@@ -12,7 +13,6 @@ export default class PopupWithConfirmation extends Popup {
     this._submitBtn.addEventListener('click', (e) => {
       e.preventDefault();
       this._submitCallback(this._id, this._removeCard);
-      super.close();
     });
 
     super.setEventListeners();

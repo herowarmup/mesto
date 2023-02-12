@@ -138,8 +138,6 @@ function submitAvatarSaveForm(obj) {
   api
     .updateAvatar(obj)
     .then(() => {
-      // profileAvatar.src = obj['popup-name_avatar'];
-      // console.log(obj);
       profileInfo.setAvatar(obj);
       avatarPopup.close();
     })
